@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/EugKonc/AutTestJS/issues"
   },
-  "homepage": "https://github.com/EugKonc/AutTestJS#readme"
+  "homepage": "https://github.com/EugKonc/AutTestJS#readme",
+  "devDependencies": {
+    "fs-extra": "^10.0.0"
+  }
 }
