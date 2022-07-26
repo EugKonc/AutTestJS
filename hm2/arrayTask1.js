@@ -41,4 +41,3 @@ let objectLength = Object.keys(obj).length;
 obj.length = objectLength;
 
 console.log("result object = ", obj);
-
