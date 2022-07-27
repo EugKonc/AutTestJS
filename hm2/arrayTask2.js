@@ -54,77 +54,79 @@ const students = [
     },
 ]
 
-function City (cityInput){
-students.map(function (x) {
-    if (x.city == cityInput) {
-      return console.log(x);
-    } else {
-      return null;
-    }
-  });}
+function city(cityInput) {
+    students.map(function (x) {
+        if (x.city == cityInput) {
+            return console.log(x);
+        } else {
+            return null;
+        }
+    });
+}
 
-  //City("Mogilev");
+//city("Mogilev");
 
-  function Age (AgeInput){
+function age(AgeInput) {
     students.map(function (x) {
         if (x.age <= AgeInput) {
-          return console.log(x);
+            return console.log(x);
         } else {
-          return null;
+            return null;
         }
-      });}
-    
-     // Age(18);
+    });
+}
 
-    //filter students by alphabetic names and prints only names; 
-    
-      function FilterByAlp (array){
-        array.sort(function (a, b) {
+// age(18);
+
+//filter students by alphabetic names and prints only names; 
+
+function filterByAlp(array) {
+    array.sort(function (a, b) {
         return a.name.localeCompare(b.name);
-      });
-      array.forEach((item) => {
+    });
+    array.forEach((item) => {
         console.log(item.name);
     })
-    }
+}
 
-    //FilterByAlp(students);
+//filterByAlp(students);
 
-    function FilterFemSta (array){
+function filterFemSta(array) {
 
-        array.forEach((item)=>{
-            if (item.sex == 'Female' & item.isMarried == true){
-                console.log(item.name," Married");
-            }
-        })
-    }
+    array.forEach((item) => {
+        if (item.sex == 'Female' & item.isMarried == true) {
+            console.log(item.name, " Married");
+        }
+    })
+}
 
-    //FilterFemSta(students);
+//filterFemSta(students);
 
-    function AgeAndSex (age,sex){
-        students.forEach((item)=>{
-            if (item.age == age & item.sex == sex){
-                console.log(item);
-            }
-        })
-    }
+function ageAndSex(age, sex) {
+    students.forEach((item) => {
+        if (item.age == age & item.sex == sex) {
+            console.log(item);
+        }
+    })
+}
 
-   // AgeAndSex(19,'Male');
+// ageAndSex(19,'Male');
 
-   function InputNewStudent (name,age,sex,isMarried,city){
+function inputNewStudent(name, age, sex, isMarried, city) {
     let obj = {};
     obj.name = name,
-    obj.age = age,
-    obj.sex = sex,
-    obj.isMarried = isMarried,
-    obj.city = city;
+        obj.age = age,
+        obj.sex = sex,
+        obj.isMarried = isMarried,
+        obj.city = city;
     students.unshift(obj);
-   }
-InputNewStudent('Vitali Ivanov',55,'Male',false,'Vitebsk');
+}
+inputNewStudent('Vitali Ivanov', 55, 'Male', false, 'Vitebsk');
 // console.log(students);
 
-   function UniqCity (array){
-let unique = [...new Set(array.map(item => item.city))];
-console.log(unique);
-  }
+function uniqCity(array) {
+    let unique = [...new Set(array.map(item => item.city))];
+    console.log(unique);
+}
 
- // UniqCity(students);
+ // uniqCity(students);

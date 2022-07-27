@@ -9,8 +9,8 @@
 + Добавить такую функцию в глобальный объект и в index.js использовать ее.
 + Обновить package.json фаил добавив запуск дз2
 Bonus: 
-	+ использовать методы массива(map, reduce, forEach).
-	+ дополнительным свойством выходного объекта – размер самого объекта.
+  + использовать методы массива(map, reduce, forEach).
+  + дополнительным свойством выходного объекта – размер самого объекта.
 Bonus example:
 Output: {1: 1, a: {hello: ‘world’}, qwe: null, length: 3 }
 */
@@ -19,16 +19,16 @@ Output: {1: 1, a: {hello: ‘world’}, qwe: null, length: 3 }
 
 
 
-let arrayInput = ['1', 1, 'a',{hello: 'world'}, 'qwe'];
+let arrayInput = ['1', 1, 'a', { hello: 'world' }, 'qwe'];
 
 console.log("input array = ", arrayInput);
 //split array  
-let objArray = arrayInput.filter((_, index)=>index%2==0);
-let keyArray = arrayInput.filter((_, index)=>index%2!=0);
+let objArray = arrayInput.filter((_, index) => index % 2 == 0);
+let keyArray = arrayInput.filter((_, index) => index % 2 != 0);
 // add null if break on key 
-if (objArray.length != keyArray.length){
-    keyArray.push(null);
- };
+if (objArray.length != keyArray.length) {
+  keyArray.push(null);
+};
 
 const obj = {};
 //creat result object
@@ -36,7 +36,7 @@ objArray.forEach((element, index) => {
   obj[element] = keyArray[index];
 });
 // + length of object to object
-let objectLength = Object.keys(obj).length; 
+let objectLength = Object.keys(obj).length;
 
 obj.length = objectLength;
 
