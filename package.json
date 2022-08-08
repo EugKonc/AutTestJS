@@ -1,10 +1,34 @@
 {
-  "name": "AutTestJS",
+  "name": "auttestjs",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "directories": {
+    "test": "hm3"
+  },
+  "dependencies": {
+    "chai": "^4.3.6",
+    "chai-spies": "^1.0.0",
+    "mocha": "9.2.2",
+    "mochawesome": "^7.1.3",
+    "nyc": "^15.1.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha hm3",
+    "coverage": "nyc npm run test"
+  },
+  "nyc": {
+    "all": true,
+    "include": [
+      "hm3/*.js"
+    ],
+    "excludes": [
+      "**/*.spec.js"
+    ],
+    "reporter": [
+      "html",
+      "text"
+    ]
   },
   "repository": {
     "type": "git",
