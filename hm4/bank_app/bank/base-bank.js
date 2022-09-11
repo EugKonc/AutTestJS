@@ -10,13 +10,15 @@ export class Bank {
         obj.id = this.clientBase.length;
         this.clientBase.push(obj);
     }
-
     getBalance(name) {
+        let result = 0;
         this.clientBase.forEach((item) => {
             if (item.name === name) {
                 console.log(item.name, " balance = ", item.balance, "$");
+                result = item.balance;
             }
         });
+        return result;
     }
     deposit(name, addBalance) {
         this.clientBase.forEach((item) => {
@@ -38,5 +40,4 @@ export class Bank {
         });
 
     }
-
 }
