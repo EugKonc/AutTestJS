@@ -1,4 +1,4 @@
-export  class Human {
+export class Human {
     constructor(name) {
         console.log('HUMAN name', name);
         this.name = name;
@@ -8,17 +8,26 @@ export  class Human {
     setBankomat(bankomat) {
         this.bankomat = bankomat;
     }
-    seeBalance() {
-        console.log('FROM BANK NAME:', this.name)
-       return this.bankomat.balanceChek(this.name);
+    async seeBalance() {
+        try {
+            console.log('Name from Bank : ', this.name);
+            return await this.bankomat.balanceChek(this.name);
+        }
+        catch (error) { console.log(error) }
     }
-    addBalanceX(money) {
-        this.bankomat.addBalance(this.name, money);
+    async addBalanceX(money) {
+        try {
+            throw new Error("Ошибка!");
+            await this.bankomat.addBalance(this.name, money);
+        }
+        catch (error) { console.log(error) }
     }
-    withdrawMoney(money) {
-        this.bankomat.withdrawMoney(this.name, money);
+    async withdrawMoney(money) {
+        try {
+            await this.bankomat.withdrawMoney(this.name, money);
+        } catch (err) { console.log(err) }
     }
-    getCartNumber() {
-        return this.cartNumber;
+    async getCartNumber() {
+        return await this.cartNumber;
     }
 }

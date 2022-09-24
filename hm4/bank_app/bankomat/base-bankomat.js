@@ -4,15 +4,15 @@ export class Bankomat {
         this.bank = bank;
     }
     //проверка баланса 
-    balanceChek(name) {
-       return this.bank.getBalance(name);
+    async balanceChek(name) {
+        return await this.bank.getBalance(name);
     }
     //пополнение баланса
-    addBalance(name, money) {
-        this.bank.deposit(name, money);
+    async addBalance(name, money) {
+        await this.bank.deposit(name, money);
     }
     //снятие денег
-    withdrawMoney(name, money) {
-        this.bank.withdraw(name, money);
+    async withdrawMoney(name, money) {
+       await this.bank.withdraw(name, money);
     }
 }

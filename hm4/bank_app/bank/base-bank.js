@@ -1,3 +1,4 @@
+import { asyncCall } from "../randomDelay.js";
 export class Bank {
     // Имя клиента баланс и Id 
     constructor() {
@@ -10,7 +11,8 @@ export class Bank {
         obj.id = this.clientBase.length;
         this.clientBase.push(obj);
     }
-    getBalance(name) {
+    async getBalance(name) {
+        await asyncCall();
         let result = 0;
         this.clientBase.forEach((item) => {
             if (item.name === name) {
@@ -20,7 +22,8 @@ export class Bank {
         });
         return result;
     }
-    deposit(name, addBalance) {
+    async deposit(name, addBalance) {
+        await asyncCall();
         this.clientBase.forEach((item) => {
             if (item.name === name) {
                 item.balance += addBalance;
@@ -28,14 +31,15 @@ export class Bank {
             }
         });
     }
-    withdraw(name, withdrawSum) {
+    async withdraw(name, withdrawSum) {
+        await asyncCall();
         this.clientBase.forEach((item) => {
             if (item.name === name) {
                 if (item.balance >= withdrawSum) {
                     item.balance -= withdrawSum;
                     console.log(item.name, " you withdraw = ", withdrawSum, "$");
                 }
-                else { console.log("You try to withdraw = ", withdrawSum, " sorry don't have enough money"); }
+                else { console.log(item.name, " try to withdraw = ", withdrawSum, "$ sorry don't have enough money"); }
             }
         });
 
